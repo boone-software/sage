@@ -59,6 +59,19 @@ let webpackConfig = {
         ],
       },
       {
+        test: /\.tsx?$/,
+        exclude: [/node_modules/],
+        use: [
+          {
+            loader: 'ts',
+            options: {
+              context: __dirname,
+              configFile: 'tsconfig.json',
+            },
+          },
+        ],
+      },
+      {
         test: /\.css$/,
         include: config.paths.assets,
         use: ExtractTextPlugin.extract({
@@ -121,6 +134,7 @@ let webpackConfig = {
     ],
   },
   resolve: {
+    extensions: ['.ts', '.tsx'],
     modules: [
       config.paths.assets,
       'node_modules',

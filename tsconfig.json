@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "es5"
+  },
+  "include": [
+    "../scripts/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "../scripts/autoload/*.ts"
+  ]
+}
